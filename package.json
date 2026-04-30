@@ -61,7 +61,7 @@
     "@types/remote-redux-devtools": "^0.5.8",
     "prettier": "^3.8.3",
     "semantic-release": "^22.0.12",
-    "typescript": "^5.9.3"
+    "typescript": "^5.3.3"
   },
   "homepage": ".",
   "overrides": {
