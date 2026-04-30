@@ -1,15 +1,12 @@
-//Hearthstone Game Events
+//Deadlock Game Events
 //@see Please read the overwolf.games.events documentation page to learn how to use Overwolf game events.
 
-//Heathstone Game Features
-//@see https://overwolf.github.io/docs/api/overwolf-games-events-hearthstone
+//Deadlock Game Features
+//@see https://overwolf.github.io/docs/api/overwolf-games-events-deadlock
 export const REQUIRED_FEATURES = [
   "gep_internal",
-  "scene_state",
-  "collection",
-  "decks",
-  "match",
-  "match-info",
+  "game_info",
+  "match_info"
 ];
 export const RETRY_TIMES = 10;
 
