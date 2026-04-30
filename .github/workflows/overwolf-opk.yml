@@ -2,8 +2,10 @@ name: 🚀 Build APP and release Overwolf OPK
 
 on:
   push:
-    branches: [main, master]
-
+    branches:
+      - prod
+    tags:
+      - 'v*.*.*'
 jobs:
   build:
     runs-on: ubuntu-latest

@@ -6,7 +6,7 @@ import {
 } from "app/shared/constants";
 import { useGameEventProvider, useWindow } from "overwolf-hooks";
 import { useCallback, useEffect } from "react";
-import { HEARTHSTONE_CLASS_ID, getHearthstoneGame } from "lib/games";
+import { DEADLOCK_CLASS_ID, getDeadlockGame } from "lib/games";
 import { setInfo, setEvent } from "../stores/background";
 import store from "app/shared/store";
 import { log } from "lib/log";
@@ -42,7 +42,7 @@ const BackgroundWindow = () => {
       //if the desktop or ingame window is not ready we don't want to start the app
       if (!desktop || !ingame) return;
       log(reason, "src/screens/background/components/Screen.tsx", "startApp");
-      const hearthstone = await getHearthstoneGame();
+      const hearthstone = await getDeadlockGame();
       if (hearthstone) {
         await Promise.all([start(), ingame?.restore(), desktop?.minimize()]);
       } else {
@@ -57,7 +57,7 @@ const BackgroundWindow = () => {
     overwolf.games.onGameInfoUpdated.addListener(async (event) => {
       if (
         event.runningChanged &&
-        event.gameInfo?.classId === HEARTHSTONE_CLASS_ID
+        event.gameInfo?.classId === DEADLOCK_CLASS_ID
       ) {
         startApp("onGameInfoUpdated");
       }

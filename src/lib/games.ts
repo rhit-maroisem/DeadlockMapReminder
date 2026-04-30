@@ -1,10 +1,10 @@
-export const HEARTHSTONE_CLASS_ID = 9898;
+export const DEADLOCK_CLASS_ID = 24482;
 
-export function getHearthstoneGame(): Promise<overwolf.games.GetRunningGameInfoResult | null> {
+export function getDeadlockGame(): Promise<overwolf.games.GetRunningGameInfoResult | null> {
   return new Promise((resolve) => {
     overwolf.games.getRunningGameInfo((result) => {
       resolve(
-        result && result.classId === HEARTHSTONE_CLASS_ID ? result : null,
+        result && result.classId === DEADLOCK_CLASS_ID ? result : null,
       );
     });
   });
